@@ -10,6 +10,11 @@ public class DebitBankCard extends BankCard {
         this.balance = balance;
     }
 
+    public DebitBankCard(User user, double balance) {
+        super(BankCard.generateCardNumber(), user);
+        this.balance = balance;
+    }
+
     public double getBalance() {
         return balance;
     }

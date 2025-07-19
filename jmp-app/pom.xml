@@ -7,10 +7,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>jmp-dto</artifactId>
+    <artifactId>jmp-app</artifactId>
     <packaging>jar</packaging>
 
-    <name>jmp-dto</name>
+    <name>jmp-app</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -23,6 +23,32 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.jmp</groupId>
+            <artifactId>jmp-dto</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.jmp</groupId>
+            <artifactId>jmp-bank-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.jmp</groupId>
+            <artifactId>jmp-service-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.jmp</groupId>
+            <artifactId>jmp-cloud-bank-impl</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.jmp</groupId>
+            <artifactId>jmp-cloud-service-impl</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     <build>
