@@ -5,5 +5,5 @@ import com.epam.jmp.dto.BankCardType;
 import com.epam.jmp.dto.User;
 
 public interface Bank {
-    BankCard createBankCard(User user, BankCardType cardType);
+    BankCard createBankCard(User user, BankCardType cardType, double amount);
 }

@@ -1,6 +1,7 @@
 package com.epam.jmp.dto;
 
 import java.util.Objects;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class BankCard {
     private String number;
@@ -25,6 +26,13 @@ public class BankCard {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public static String generateCardNumber() {
+        long bound = 10_000_000_000_000_000L;
+        ThreadLocalRandom rnd = ThreadLocalRandom.current();
+        long raw = rnd.nextLong(bound);
+        return String.format("%016d", raw);
     }
 
     @Override
