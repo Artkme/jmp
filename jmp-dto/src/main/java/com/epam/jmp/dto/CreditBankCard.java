@@ -10,6 +10,11 @@ public class CreditBankCard extends BankCard {
         this.creditLimit = creditLimit;
     }
 
+    public CreditBankCard(User user, double creditLimit) {
+        super(BankCard.generateCardNumber(), user);
+        this.creditLimit = creditLimit;
+    }
+
     public double getCreditLimit() {
         return creditLimit;
     }

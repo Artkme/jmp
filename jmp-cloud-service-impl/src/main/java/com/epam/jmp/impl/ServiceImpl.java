@@ -3,10 +3,13 @@ package com.epam.jmp.impl;
 import com.epam.jmp.dto.BankCard;
 import com.epam.jmp.dto.Subscription;
 import com.epam.jmp.dto.User;
+import com.epam.jmp.exception.SubscriptionNotFoundException;
 import com.epam.jmp.service.Service;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 
 public class ServiceImpl implements Service {
@@ -24,13 +27,21 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public Optional<Subscription> getSubscriptionByBankCardNumber(String cardNumber) {
-        return Optional.ofNullable(subscriptions.get(cardNumber));
+    public Subscription getSubscriptionByBankCardNumber(String cardNumber) {
+        return Optional.ofNullable(subscriptions.get(cardNumber))
+                .orElseThrow(() -> new SubscriptionNotFoundException(cardNumber));
     }
-
 
     @Override
     public List<User> getAllUsers() {
-        return users.stream().toList();
+        return users.stream()
+                .collect(Collectors.toUnmodifiableList());
+    }
+
+    @Override
+    public List<Subscription> getAllSubscriptionsByCondition(Predicate<Subscription> condition) {
+        return subscriptions.values().stream()
+                .filter(condition)
+                .collect(Collectors.toUnmodifiableList());
     }
 }

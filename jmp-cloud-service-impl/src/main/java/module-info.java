@@ -3,4 +3,5 @@ module jmp.cloud.service.impl {
     requires jmp.dto;
 
     exports com.epam.jmp.impl;
+    exports com.epam.jmp.exception;
 }
