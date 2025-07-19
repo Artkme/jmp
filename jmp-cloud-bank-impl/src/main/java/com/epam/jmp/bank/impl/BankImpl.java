@@ -1,7 +1,7 @@
-package com.epam.jmp.impl;
+package com.epam.jmp.bank.impl;
 
 import com.epam.jmp.dto.*;
-import com.epam.jmp.service.Bank;
+import com.epam.jmp.bank.service.Bank;
 
 public class BankImpl implements Bank {
     @Override
